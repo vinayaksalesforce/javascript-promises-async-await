@@ -1,3 +1,3 @@
-exports.fetchMovies = ()=>{
+export function fetchMovies(){
 
 }

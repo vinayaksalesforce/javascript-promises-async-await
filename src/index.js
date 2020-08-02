@@ -45,17 +45,13 @@ import {
       };
     } catch (error) {
       console.log("Error fetching books and movies", error);
+      return error;
     }
   }
   
   async function getBooksOrMoviesAsync() {
-    try {
-      const values = await Promise.race([asyncFetchBooks(), asyncFetchMovies()]);
+      const values = await Promise.race([asyncFetchBookss(), asyncFetchMovies()]);
       return values;
-    } catch (error) {
-      console.error("Error waiting for the promise race", error);
-      throw error;
-    }
   }
   
   getBooksAndMoviesAsync().then(results => {
